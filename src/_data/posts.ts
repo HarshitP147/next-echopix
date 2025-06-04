@@ -138,7 +138,7 @@ export const posts: Post[] = [
         username: 'nina_novelist',
         avatar: 'https://avatars.githubusercontent.com/u/45678901?v=4',
         text: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-        images: [img4.src, img5.src],
+        images: [img4.src, img5.src, img1.src],
         createdAt: '2023-10-16T22:20:00Z',
         likes: 23,
     },
