@@ -14,7 +14,7 @@ export default function PostCard({ post }: { post: Post }) {
     const shouldTruncate = post.text && post.text.length > 200
 
     return (
-        <div className="flex flex-col gap-4 p-4 border rounded-lg shadow-sm">
+        <div className="flex flex-col gap-4 p-4 rounded-lg shadow-lg">
             {/* User Info */}
             <div className="flex items-center gap-3">
                 <Avatar >

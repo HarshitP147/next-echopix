@@ -9,11 +9,11 @@ export default function Home() {
             <main className="flex border border-black flex-col items-center justify-between p-24">
                 <h1 className="text-4xl font-bold">Welcome to EchoPix!</h1>
                 <p className="mt-4 text-lg">Your photo sharing platform.</p>
-                <div className="w-full max-w-2xl mt-8">
+                <div className="w-full max-w-2xl mt-8 flex flex-col gap-10 ">
                     {posts.map((post) => (
                         <PostCard key={post.id} post={post} />
                     ))}
-                </div>  
+                </div>
             </main>
         </>
     );
