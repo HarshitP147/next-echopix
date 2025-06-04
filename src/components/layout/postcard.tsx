@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
+import { useState } from 'react'
 
 import { Avatar } from '@/components/ui/avatar'
 import PostCardImage from '@/components/medium/postcard-image'
@@ -9,7 +10,8 @@ import PostCardImage from '@/components/medium/postcard-image'
 import type { Post } from '@/_data/posts'
 
 export default function PostCard({ post }: { post: Post }) {
-
+    const [expanded, setExpanded] = useState(false)
+    const shouldTruncate = post.text && post.text.length > 200
 
     return (
         <div className="flex flex-col gap-4 p-4 border rounded-lg shadow-sm">
@@ -29,7 +31,17 @@ export default function PostCard({ post }: { post: Post }) {
             {/* Text */}
             {post.text && (
                 <p className="text-gray-700">
-                    {post.text}
+                    {expanded || !shouldTruncate
+                        ? post.text
+                        : `${post.text.slice(0, 200)}...`}
+                    {shouldTruncate && (
+                        <button
+                            onClick={() => setExpanded(!expanded)}
+                            className="ml-2 text-blue-500 hover:underline"
+                        >
+                            {expanded ? 'Read less' : 'Read more'}
+                        </button>
+                    )}
                 </p>
             )}
 
