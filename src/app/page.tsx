@@ -1,6 +1,6 @@
 import { posts } from '@/_data/posts';
 
-import PostCard from '@/components/ui/postcard';
+import PostCard from '@/components/layout/postcard';
 
 
 export default function Home() {
