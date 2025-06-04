@@ -1,8 +1,14 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion } from 'motion/react';
+import { useState } from 'react'
+import Image from 'next/image'
+import { motion } from 'motion/react'
+import clsx from 'clsx'
 
-export default function ClickImage({ image }: { image: string }) {
+interface ClickImageProps {
+    image: string
+    className?: string
+}
+
+export default function ClickImage({ image, className }: ClickImageProps) {
     const [isZoomed, setIsZoomed] = useState(false);
 
     const handleClick = () => {
@@ -15,7 +21,11 @@ export default function ClickImage({ image }: { image: string }) {
 
 
     return (
-        <motion.div className="flex-shrink-0 w-64 h-64 rounded-lg border overflow-hidden"
+        <motion.div
+            className={clsx(
+                'flex-shrink-0 rounded-lg border overflow-hidden',
+                className ?? 'w-64 h-64'
+            )}
             onClick={handleClick}
             style={{
                 cursor: isZoomed ? 'zoom-out' : 'zoom-in',
