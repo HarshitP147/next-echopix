@@ -5,21 +5,23 @@ import { motion } from 'motion/react';
 export default function ClickImage({ image }: { image: string }) {
     const [isZoomed, setIsZoomed] = useState(false);
 
+
+    
     const handleClick = () => {
-        if (isZoomed) {
-            setIsZoomed(false);
-        } else {
-            setIsZoomed(true);
-        }
+        // if (isZoomed) {
+        //     setIsZoomed(false);
+        // } else {
+        //     setIsZoomed(true);
+        // }
     };
 
 
     return (
         <motion.div className="flex-shrink-0 w-full h-64 rounded-lg border overflow-hidden"
             onClick={handleClick}
-            style={{
-                cursor: isZoomed ? 'zoom-out' : 'zoom-in',
-            }}
+            // style={{
+            //     cursor: isZoomed ? 'zoom-out' : 'zoom-in',
+            // }}
         >
             <motion.div
                 layout
