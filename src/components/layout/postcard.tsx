@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Avatar } from '@/components/ui/avatar'
 import PostCardImage from '@/components/medium/postcard-image'
 
+
 import type { Post } from '@/_data/posts'
 
 export default function PostCard({ post }: { post: Post }) {
@@ -30,7 +31,8 @@ export default function PostCard({ post }: { post: Post }) {
 
             {/* Text */}
             {post.text && (
-                <p className="text-gray-700">
+                <p
+                    className="text-gray-700">
                     {expanded || !shouldTruncate
                         ? post.text
                         : `${post.text.slice(0, 200)}...`}

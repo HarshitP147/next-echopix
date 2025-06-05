@@ -15,7 +15,7 @@ export default function ClickImage({ image }: { image: string }) {
 
 
     return (
-        <motion.div className="flex-shrink-0 w-64 h-64 rounded-lg border overflow-hidden"
+        <motion.div className="flex-shrink-0 w-full h-64 rounded-lg border overflow-hidden"
             onClick={handleClick}
             style={{
                 cursor: isZoomed ? 'zoom-out' : 'zoom-in',

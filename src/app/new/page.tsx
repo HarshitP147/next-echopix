@@ -28,7 +28,7 @@ export default function NewPostPage() {
     }
 
     return (
-        <div className="max-w-md mx-auto p-4">
+        <div className="max-w-md mx-auto flex flex-col p-4">
             <h1 className="text-4xl text-center font-bold mb-4">Create a new post</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <Textarea
