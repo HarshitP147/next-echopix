@@ -5,6 +5,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import Image from 'next/image'
 
 export default function NewPostPage() {
     const [text, setText] = useState('')
@@ -13,8 +14,17 @@ export default function NewPostPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        // Later: send data to Supabase
-        console.log({ text, images })
+        // Reset form
+        setText('')
+        setImages([])
+        // Clear file input
+        const fileInput = e.currentTarget.querySelector('input[type="file"]') as HTMLInputElement;
+        if (fileInput) {
+            fileInput.value = ''
+        }
+        // Optionally, you can also handle image uploads here
+        // For now, just log the data
+        console.log('Post submitted:', { text, images });
     }
 
     return (
@@ -40,7 +50,7 @@ export default function NewPostPage() {
             {images.length > 0 && (
                 <div className="mt-4 grid grid-cols-3 gap-2">
                     {images.map((file, i) => (
-                        <img
+                        <Image
                             key={i}
                             src={URL.createObjectURL(file)}
                             alt="Preview"
