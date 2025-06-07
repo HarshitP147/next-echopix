@@ -3,7 +3,7 @@ import ClickImage from "@/components/ui/click-image";
 
 export default function PostCardImage({ images }: { images: string[] }) {
     return (
-        <Carousel orientation="horizontal" className="user-select-none ">
+        <Carousel orientation="horizontal" className="user-select-none">
             <CarouselContent className="relative" >
                 {images.map((image, index) => (
                     <CarouselItem key={index} >
