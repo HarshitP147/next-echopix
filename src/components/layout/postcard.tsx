@@ -14,12 +14,8 @@ export default function PostCard({ post }: { post: Post }) {
     const [expanded, setExpanded] = useState(false);
     const shouldTruncate = post.text && post.text.length > 200;
 
-    const toggleExpand = () => {
-        setExpanded(!expanded);
-    };
-
     return (
-        <Card className="gap-4 rounded-lg shadow-lg">
+        <Card className="gap-4 rounded-lg shadow-lg border-none">
             <CardHeader className="flex items-center gap-4">
                 <Avatar >
                     <Image src={post.avatar} alt={post.username} width={40} height={40} className="rounded-full" />
